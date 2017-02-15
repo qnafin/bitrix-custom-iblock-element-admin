@@ -1,5 +1,5 @@
 <?
-$APPLICATION->AddHeadScript('/local/templates/sport__copy/javascript/jquery/jquery-1.7.1.min.js');
-$APPLICATION->AddHeadScript('/local/admin/js/script.js');
+$APPLICATION->AddHeadScript('https://code.jquery.com/jquery-3.1.1.min.js');
+$APPLICATION->AddHeadScript('/local/custom_admin/js/script.js');
 ?>
 
