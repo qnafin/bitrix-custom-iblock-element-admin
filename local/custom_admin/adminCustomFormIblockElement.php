@@ -1,4 +1,5 @@
 <?php
+
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
 CModule::IncludeModule('iblock');
 
@@ -32,7 +33,7 @@ foreach ($arInputProps as $val) {
     $_GET[$val] = unserialize($_COOKIE[$val]);
 }
 
-
+/*Добываем возможные свойства инфоблока*/
 $properties = CIBlockProperty::GetList(Array("name"=>"asc"), Array("ACTIVE"=>"Y", "IBLOCK_ID"=>$IBLOCK_ID, "PROPERTY_TYPE"=>"L"));
 while ($prop_fields = $properties->GetNext())
 {
@@ -41,7 +42,7 @@ while ($prop_fields = $properties->GetNext())
 
 if(empty($arProp))
   exit;
-
+/*Добываем параметры определенного свойства*/
 $getPropCode = $arProp[$_GET['CIEF_PROP']]['CODE'];
 if(!empty($getPropCode)) {
     $property_enums = CIBlockPropertyEnum::GetList(Array("id"=>"asc"), Array("IBLOCK_ID"=>$IBLOCK_ID, "CODE"=>$getPropCode));
