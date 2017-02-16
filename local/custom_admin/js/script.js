@@ -11,7 +11,7 @@ $(document).ready(function(){
   if(location.pathname == "/bitrix/admin/iblock_element_admin.php")
   {
     var parent = $('.adm-filter-main-table').parent();
-    var url = "/local/admin/adminCustomFormIblockElement.php"
+    var url = "/local/custom_admin/adminCustomFormIblockElement.php"
     var datapage = location.search.replace( '?', '' );
 
     $.ajax({
@@ -23,7 +23,7 @@ $(document).ready(function(){
     });
 
 
-      $(document).on('change', '#customIblockElementForm select', function(){
+      $(document).on('change', '#customIblockElementForm #CIEF_PROP', function(){
           $.ajax({
             url: url ,
             data: datapage+'&'+$(this).parents('form').serialize() ,
